@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 308853595}
   - component: {fileID: 308853594}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: BlockOut_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1332544190}
   - component: {fileID: 1332544189}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: PlayerTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
