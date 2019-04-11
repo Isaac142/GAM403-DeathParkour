@@ -459,8 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8873675a358c324fac6736b4643d154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSpeed: 5
-  weaponJump: 20
+  weaponSpeed: 0.15
+  weaponJump: 10
 --- !u!1 &1124786529
 GameObject:
   m_ObjectHideFlags: 0
