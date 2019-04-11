@@ -8,9 +8,10 @@ public class PlayerMovement : MonoBehaviour
     CharacterController controller;
     public float verticalVelocity;
     public float gravity = 14.0f;
-    public float jumpForce = 10.0f;
-    public float normalSpeed = 1.0f;
-    public float gunspeed = 1.0f;
+    public float currentjumpForce = 10.0f;
+    public float currentSpeed = 1.0f;
+    //public float gunspeed = 1.0f;
+    //public float knifeSpeed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                verticalVelocity = jumpForce;
+                verticalVelocity = currentjumpForce;
             }
         }
         else
@@ -44,6 +45,6 @@ public class PlayerMovement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(h, 0, v) * normalSpeed);
+        transform.Translate(new Vector3(h, 0, v) * currentSpeed);
     }
 }

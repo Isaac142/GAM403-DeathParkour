@@ -5,13 +5,14 @@ using UnityEngine;
 public class ChangeWeapons : MonoBehaviour
 {
     public GameObject[] weapons;
-    PlayerMovement movement;
+    public PlayerMovement movement;
     public GameObject knife;
     public GameObject gun;
 
     // Start is called before the first frame update
     void Start()
     {
+        movement = FindObjectOfType<PlayerMovement>();
         Cursor.visible = false;
         Debug.Log(weapons.Length);
         WeaponSwap(0);
@@ -30,10 +31,14 @@ public class ChangeWeapons : MonoBehaviour
             WeaponSwap(1);
         }
 
-        if (gun.gameObject.CompareTag("Knife"))
-        {
-            movement.normalSpeed = movement.normalSpeed;
-        }
+        //if (gun.gameObject.CompareTag("Gun"))
+        //{
+        //    movement.currentSpeed = movement.gunspeed;
+        //}
+        //if (knife.gameObject.CompareTag("Knife"))
+        //{
+        //    movement.currentSpeed = movement.knifeSpeed;
+        //}
     }
 
     void WeaponSwap(int weaponNumber)
@@ -41,9 +46,18 @@ public class ChangeWeapons : MonoBehaviour
         for (int i = 0; i < weapons.Length; i++)
         {
             if (i != weaponNumber)
+            {
                 weapons[i].SetActive(false);
+                
+
+            }
+
             else
+            {
                 weapons[i].SetActive(true);
+                movement.currentSpeed = weapons[i].GetComponent<Weapon>().weaponSpeed;
+                movement.currentjumpForce = weapons[i].GetComponent<Weapon>().weaponJump;
+            }
 
         }
     }
