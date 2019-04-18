@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    [SerializeField] private Transform player;
-    [SerializeField] private Transform respawnPoint;
+    public GameObject player;
+    public GameObject respawnPoint;
 
-    private void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        player.transform.position = respawnPoint.transform.position;
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        other.gameObject.transform.position = Vector3.zero;
+    //        //Destroy(player);
+    //        player.GetComponent<Renderer>().material.color = Color.green;
+    //    }
+    //}
 }

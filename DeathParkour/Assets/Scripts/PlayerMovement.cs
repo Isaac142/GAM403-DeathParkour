@@ -47,4 +47,15 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(new Vector3(h, 0, v) * currentSpeed);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+        if (other.gameObject.CompareTag("DeathZone"))
+        {
+            other.gameObject.transform.position = Vector3.zero;
+            //Destroy(player);
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+    }
 }
