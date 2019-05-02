@@ -7,6 +7,7 @@ TagManager:
   - Gun
   - Knife
   - DeathZone
+  - Win
   layers:
   - Default
   - TransparentFX
