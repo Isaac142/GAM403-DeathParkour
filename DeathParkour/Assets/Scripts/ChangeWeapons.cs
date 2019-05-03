@@ -5,11 +5,12 @@ using UnityEngine;
 public class ChangeWeapons : MonoBehaviour
 {
     public GameObject[] weapons;
-    public PlayerMovement movement;
+    public PlayerMovement movement;                            
     public GameObject knife;
     public GameObject gun;
 
-    // Start is called before the first frame update
+
+    //Calling upon the WeaponSwap function, hiding the cursor, and calling on the PlayerMovement script
     void Start()
     {
         movement = FindObjectOfType<PlayerMovement>();
@@ -18,7 +19,6 @@ public class ChangeWeapons : MonoBehaviour
         WeaponSwap(0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -31,9 +31,13 @@ public class ChangeWeapons : MonoBehaviour
             WeaponSwap(1);
         }
 
+
+        //First attempt at making different weapons give different movement speed and jump height 
+
+
         //if (gun.gameObject.CompareTag("Gun"))
         //{
-        //    movement.currentSpeed = movement.gunspeed;
+        //    movement.currentSpeed = movement.gunspeed;                                
         //}
         //if (knife.gameObject.CompareTag("Knife"))
         //{
@@ -41,15 +45,18 @@ public class ChangeWeapons : MonoBehaviour
         //}
     }
 
+
+    //Creating a loop for the weapons, to make it more efficent 
+    //The loop is grabing the first weapon turning it into a number, disabling the other weapons in turn
+    //The weapon selected then calls on the weapon script, which is placed on each weapon seperately, allowing the game designer, to play with the numbers
+    //In turn changing the weapons allowing for different weapons to give different attributes
     void WeaponSwap(int weaponNumber)
     {
-        for (int i = 0; i < weapons.Length; i++)
-        {
-            if (i != weaponNumber)
-            {
-                weapons[i].SetActive(false);
-                
-
+        for (int i = 0; i < weapons.Length; i++)                                
+        {                                                                       
+            if (i != weaponNumber)                                              
+            {                                                                   
+                weapons[i].SetActive(false);                
             }
 
             else

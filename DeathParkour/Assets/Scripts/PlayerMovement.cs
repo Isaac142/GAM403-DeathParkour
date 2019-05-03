@@ -13,18 +13,21 @@ public class PlayerMovement : MonoBehaviour
     public GameManager GM;
     //public float gunspeed = 1.0f;
     //public float knifeSpeed = 5.0f;
-    // Start is called before the first frame update
+
+        //Calling on the CharacterController Component
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+    //Calling the PlayerJumping function
     void Update()
     {
         PlayerJumping();
     }
 
+    //Creating the player jumping, and player movement function.
+    //If the player is on ground then he is able to jump, depending on the jumpforce and gravity.
     void PlayerJumping()
     {
         if (controller.isGrounded)
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(new Vector3(h, 0, v) * currentSpeed);
     }
 
+    //If the player stands on the winning platform, then the GameManager is called upon, to activate the You Win text and the restart button
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
@@ -58,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
             GM.isWon = true;
             GM.isWinButton = true;
         }
+
+        //This DeathZone, was made so that, if the player was to touch the floor, he/she would "die" and essensially respawn back to the start.
         if (other.gameObject.CompareTag("DeathZone"))
         {
             other.gameObject.transform.position = Vector3.zero;

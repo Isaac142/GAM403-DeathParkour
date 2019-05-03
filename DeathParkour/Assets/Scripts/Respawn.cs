@@ -7,6 +7,8 @@ public class Respawn : MonoBehaviour
     public GameObject player;
     public GameObject respawnPoint;
 
+    //This was apart of the "die" and "respawn"
+
     //void OnTriggerEnter(Collider other)
     //{
     //    if (other.gameObject.CompareTag("Player"))

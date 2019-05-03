@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    //Creating a GameManager to hold all the variabled and functions that are specific to the game.
     public float timer = 0f;
     public int health = 100;
     public bool isPaused = false;
@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+    //Creating the Pause Screen, if the pause screen is activated, the timer on the game, will freeze, along with all other UI.
     void Update()
     {
 

@@ -4,6 +4,8 @@ using UnityEngine;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class PlayerCameraMovement : MonoBehaviour
 {
+
+    //Creating different variables for the different Axis.
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
     public RotationAxes axes = RotationAxes.MouseXAndY;
 
@@ -18,7 +20,7 @@ public class PlayerCameraMovement : MonoBehaviour
 
     private float rotationY = 0f;
 
-    // Start is called before the first frame update
+    //Calling upon the Rigidbody, and freezing their rotations.
     void Start()
     {
         if (GetComponent<Rigidbody>())
@@ -27,7 +29,6 @@ public class PlayerCameraMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (axes == RotationAxes.MouseXAndY)

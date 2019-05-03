@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
         
     }
 
+    //The F2 is rounding up the timer to 2 decimal points.
     void Update()
     {
         if(!isTitleScreen)
@@ -34,11 +35,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //Loading level, used on the Title screen buttons and the return to title screen button in the game pause menu.
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
     }
 
+    //Close the application completely when the Quit button is pressed
     public void QuitGame()
     {
         Application.Quit();

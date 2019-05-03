@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+
+    //creating a variable for the weapons, which is then called on another script, allowing different weapons to have different values
+
     public float weaponSpeed;
     public float weaponJump;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
