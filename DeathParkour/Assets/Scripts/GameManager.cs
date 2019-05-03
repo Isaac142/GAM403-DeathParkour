@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int health = 100;
     public bool isPaused = false;
     public UIManager UI;
+    public bool isWon = false;
+    public bool isWinButton = false;
 
     void Start()
     {
@@ -29,6 +31,9 @@ public class GameManager : MonoBehaviour
             isPaused = !isPaused;
             UI.Pause(isPaused);
         }
-        
+
+            UI.winText.SetActive(isWon);
+            UI.winButton.SetActive(isWinButton);
+
     }
 }

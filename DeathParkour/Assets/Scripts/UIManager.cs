@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Image healthBar;
     public GameObject winText;
+    public GameObject winButton;
 
     void Start()
     {

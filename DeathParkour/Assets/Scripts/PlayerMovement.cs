@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 14.0f;
     public float currentjumpForce = 10.0f;
     public float currentSpeed = 1.0f;
+    public GameManager GM;
     //public float gunspeed = 1.0f;
     //public float knifeSpeed = 5.0f;
     // Start is called before the first frame update
@@ -51,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
+        if(other.gameObject.CompareTag("Win"))
+        {
+            Debug.Log("You Win");
+            GM.isWon = true;
+            GM.isWinButton = true;
+        }
         if (other.gameObject.CompareTag("DeathZone"))
         {
             other.gameObject.transform.position = Vector3.zero;
